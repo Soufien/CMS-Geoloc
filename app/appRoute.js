@@ -6,13 +6,38 @@ angular.module('appRoutes', []).config(['$routeProvider', function($routeProvide
     $routeProvider
 
         // home page
+        .when('/', {
+            templateUrl: 'app/views/cmsMainView.html',
+            controller: 'MainController'
+        })
+
+        .when('/test1', {
+            templateUrl: 'app/views/cmsMainView.html',
+            controller: 'MainController'
+        })
+
+        .when('/test2', {
+            templateUrl: 'app/views/cmsMainView.html',
+            controller: 'MainController'
+        })
+
+        .when('/test3', {
+            templateUrl: 'app/views/cmsMainView.html',
+            controller: 'MainController'
+        })
+
+        .when('/test4', {
+            templateUrl: 'app/views/cmsMainView.html',
+            controller: 'MainController'
+        })
+
         .when('/login', {
-            templateUrl: 'views/loginForm.html',
+            templateUrl: 'app/views/loginForm.html',
             controller: 'LoginController'
         })
 
         .when('/signup', {
-            templateUrl: 'views/signUpForm.html',
+            templateUrl: 'app/views/signUpForm.html',
             controller: 'SignUpController'
         })
 

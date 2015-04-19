@@ -7,7 +7,7 @@ angular.module('LoginSrv', []).factory('LoginService', ['$http', function($http)
         // call to get all account info
         createBalise : function(newData, callback) {
 
-            $http.post('/home/balise/createBalise', newData).
+            $http.post('/entreprise', newData).
                 success(function(data, status, headers, config) {
                     callback(data);
 

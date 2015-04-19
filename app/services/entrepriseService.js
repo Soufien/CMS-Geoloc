@@ -5,21 +5,18 @@ angular.module('EntService', []).factory('EntrepriseService', ['$http', function
 
     return {
         // call to get all account info
-        createBalise : function(newData, callback) {
-
-            $http.post('/home/balise/createBalise', newData).
-                success(function(data, status, headers, config) {
-                    callback(data);
-
-                }).
-                error(function(data, status, headers, config) {
-
+        getListEntreprise : function(callback){
+            $http.get('/entreprise')
+                .success(function(entreprises) {
+                    callback(entreprises);
+                })
+                .error(function(err) {
+                    alert(err);
                 });
         },
 
-        updateBalise : function(newData, callback) {
-
-            $http.post('/home/balise/updateBalise', newData).
+        createEntreprise : function(entreprise,callback){
+            $http.post('/entreprise ', entreprise).
                 success(function(data, status, headers, config) {
                     callback(data);
 

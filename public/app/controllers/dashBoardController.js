@@ -5,10 +5,16 @@ angular.module('MainCtrl', []).controller('MainController',['$scope','Entreprise
 
 
     $scope.me = 'Hello from MainController';
+    $scope.entrepriselist = null;
+
+
+    $(document).ready(function(){
+    });
 
     $scope.getListEntreprise = function(){
         EntrepriseService.getListEntreprise(function(entreprises){
-            console.log(entreprises[1].secteur);
+            $scope.entrepriselist = entreprises;
+            console.log(entreprises);
 
         });
     }

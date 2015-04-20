@@ -5,7 +5,7 @@ angular.module('EntService', []).factory('EntrepriseService', ['$http', function
 
     return {
         // call to get all account info
-        getListEntreprise : function(callback){
+            getListEntreprise : function(callback){
             $http.get('/entreprise')
                 .success(function(entreprises) {
                     callback(entreprises);

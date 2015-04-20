@@ -11,24 +11,14 @@ angular.module('appRoutes', []).config(['$routeProvider', function($routeProvide
             controller: 'MainController'
         })
 
-        .when('/test1', {
-            templateUrl: 'app/views/cmsMainView.html',
-            controller: 'MainController'
+        .when('/entreprise/ajouter', {
+            templateUrl: 'app/views/forms/ajouterentreprise.html',
+            controller: 'EntrepriseController'
         })
 
-        .when('/test2', {
-            templateUrl: 'app/views/cmsMainView.html',
-            controller: 'MainController'
-        })
-
-        .when('/test3', {
-            templateUrl: 'app/views/cmsMainView.html',
-            controller: 'MainController'
-        })
-
-        .when('/test4', {
-            templateUrl: 'app/views/cmsMainView.html',
-            controller: 'MainController'
+        .when('/entreprise/modifier', {
+            templateUrl: 'app/views/forms/ajouterentreprise.html',
+            controller: 'EntrepriseController'
         })
 
         .when('/login', {

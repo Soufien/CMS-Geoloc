@@ -1,0 +1,157 @@
+{
+	"type": "Collection",
+	"properties": {
+		"secteur": {
+			"name": "secteur",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "secteur",
+			"order": 0
+		},
+		"activite": {
+			"name": "activite",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "activite",
+			"order": 1
+		},
+		"produit": {
+			"name": "produit",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "produit",
+			"order": 2
+		},
+		"responsable": {
+			"name": "responsable",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "responsable",
+			"order": 3
+		},
+		"raisonsociale": {
+			"name": "raisonsociale",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "raisonsociale",
+			"order": 4
+		},
+		"denomination": {
+			"name": "denomination",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "denomination",
+			"order": 5
+		},
+		"gouvernorat": {
+			"name": "gouvernorat",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "gouvernorat",
+			"order": 6
+		},
+		"delegation": {
+			"name": "delegation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "delegation",
+			"order": 7
+		},
+		"adresseusine": {
+			"name": "adresseusine",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "adresseusine",
+			"order": 8
+		},
+		"regime": {
+			"name": "regime",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "regime",
+			"order": 9
+		},
+		"capital": {
+			"name": "capital",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "capital",
+			"order": 10
+		},
+		"emploi": {
+			"name": "emploi",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "emploi",
+			"order": 11
+		},
+		"production": {
+			"name": "production",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "production",
+			"order": 12
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "email",
+			"order": 13
+		},
+		"url": {
+			"name": "url",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "url",
+			"order": 14
+		},
+		"fax": {
+			"name": "fax",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fax",
+			"order": 15
+		},
+		"telephone": {
+			"name": "telephone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "telephone",
+			"order": 16
+		},
+		"longitude": {
+			"name": "longitude",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "longitude",
+			"order": 17
+		},
+		"latitude": {
+			"name": "latitude",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "latitude",
+			"order": 18
+		}
+	}
+}

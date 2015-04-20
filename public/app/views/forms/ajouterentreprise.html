@@ -1,0 +1,43 @@
+<form>
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header active"><i class="mdi-communication-business"></i>L'entreprise</div>
+            <div class="collapsible-body">
+                <div ng-include="'app/views/forms/entrepriseForm1.html'"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="collapsible-header active"><i class="mdi-communication-quick-contacts-dialer"></i>Contact</div>
+            <div class="collapsible-body">
+                <div ng-include="'app/views/forms/entrepriseForm2.html'"></div>
+
+            </div>
+        </li>
+
+        <li>
+            <div class="collapsible-header active"><i class="mdi-notification-play-install"></i>Etat juridique</div>
+            <div class="collapsible-body">
+                <div ng-include="'app/views/forms/entrepriseForm3.html'"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="collapsible-header active"><i class="mdi-maps-pin-drop"></i>Maps</div>
+            <div class="collapsible-body">
+                <div ng-include="'app/views/forms/entrepriseForm4.html'"></div>
+            </div>
+        </li>
+
+    </ul>
+</form>
+
+<div class="row">
+    <div class="col s5 offset-s5">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="mdi-content-send right"></i>
+        </button>
+    </div>
+
+</div>

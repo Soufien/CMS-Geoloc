@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myGeolocCms">
+<head>
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script type="text/javascript" src="bower_components/jquery-locationpicker-plugin/dist/locationpicker.jquery.js"></script>
+
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+
+  <script type="text/javascript" src="bower_components/ng-table/dist/ng-table.js"></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/ng-table/dist/ng-table.css">
+
+  <script type="text/javascript" src="app/services/entrepriseService.js"></script>
+  <script type="text/javascript" src="app/services/loginService.js"></script>
+  <script type="text/javascript" src="app/services/signUpService.js"></script>
+
+  <script type="text/javascript" src="app/controllers/dashBoardController.js"></script>
+  <script type="text/javascript" src="app/controllers/loginController.js"></script>
+  <script type="text/javascript" src="app/controllers/signUpController.js"></script>
+
+
+
+
+
+  <script type="text/javascript" src="app/appRoute.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  <link rel="stylesheet" type="text/css" href="app/css/mystyle.css">
+
+</head>
+
+
+<body>
+
+<div ng-include="'app/views/header.html'"></div>
+
+<main>
+  <div class="container">
+
+    <!-- Page Content goes here -->
+    <div ng-view="" id="viewContainer"></div>
+
+  </div>
+</main>
+
+<div ng-include="'app/views/footer.html'"></div>
+
+
+
+</body>
+</html>

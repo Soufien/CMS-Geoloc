@@ -3,16 +3,16 @@ Deployd + Angular + Metrialize
 Steps to run this application :
 
 ----------Install needed packages -----------
-#1 - sudo yum install nodejs
-#2 - sudo yum install mongodb-server
-#1 - npm install deployd -g
-#1 - npm install bower -g
+#1  sudo yum install nodejs
+#2  sudo yum install mongodb-server
+#1  npm install deployd -g
+#1  npm install bower -g
 
 
 -------------Run Application ----------
-#1 - Download source code
-#2 - cd CMS-Geoloc/public
-#3 - bower install
+#1  Download source code
+#2  cd CMS-Geoloc/public
+#3  bower install
 
 Open 2 terminal windows :
 

@@ -15,17 +15,28 @@ npm install bower -g
 
 
 -------------Run Application ----------
+
 Download source code
+
 cd CMS-Geoloc/public
+
 bower install
+
 
 Open 2 terminal windows :
 
+
 In the first one run :
+
+
   sudo mongod
   
+  
 In the second one run :
+
   sudo dpd
   
+  
 And then open your browser and type the following URL to visit the dashoard :
+
   http://localhost:2403/dashboard/

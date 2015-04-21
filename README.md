@@ -5,9 +5,13 @@ Steps to run this application :
 ----------Install needed packages -----------
 
 sudo yum install nodejs
+
 sudo yum install mongodb-server
+
 npm install deployd -g
+
 npm install bower -g
+
 
 
 -------------Run Application ----------

@@ -18,7 +18,7 @@ angular.module('EntService', []).factory('EntrepriseService', ['$http', function
         createEntreprise : function(entreprise,callback){
             $http.post('/entreprise ', entreprise).
                 success(function(data, status, headers, config) {
-                    callback(data);
+                    callback(status);
 
                 }).
                 error(function(data, status, headers, config) {

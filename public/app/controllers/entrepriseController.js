@@ -9,29 +9,25 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
     $scope.entrepriselist = null;
 
     $scope.entreprise = {
-
-        denomination:"",
-        raisonsociale:"",
-        responsable:"",
         activite:"",
-        produit:"",
-
         adresseusine:"",
-        gouvernorat:"",
-        delegation:"",
-        tel:"",
-        fax:"",
-        mail:"",
-        url:"",
-        regime:"",
-        pays:"",
-        annee:"",
         capital:"",
+        delegation:"",
+        denomination:"",
+        email:"",
         emploi:"",
+        fax:"",
+        gouvernorat:"",
         latitude:"",
-        longitude:""
-
-    };
+        longitude:"",
+        production:"",
+        produit:"",
+        raisonsociale:"",
+        regime:"",
+        responsable:"",
+        secteur:"",
+        telephone:"",
+        url:""};
 
     $(document).ready(function(){
         $('.collapsible').collapsible({
@@ -45,6 +41,21 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
         EntrepriseService.getListEntreprise(function(entreprises){
             $scope.entrepriselist = entreprises;
             console.log(entreprises);
+        });
+    }
+
+
+    $scope.createNewEntreprise = function(entreprise){
+
+        EntrepriseService.createEntreprise(entreprise,function(data){
+            if(data == 200){
+
+                $('#successModal').openModal();
+            }else{
+                $('#errorModal').openModal();
+
+            }
+            console.log(data);
 
         });
     }

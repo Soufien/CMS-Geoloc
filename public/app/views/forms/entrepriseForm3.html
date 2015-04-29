@@ -2,27 +2,36 @@
     <div class="row">
         <div class="input-field col s4">
             <input id="regime" type="text" class="validate" ng-model="entreprise.regime">
-            <label for="regime">Régime</label>
+            <label for="regime" ng-class="{'active' : entreprise.regime}">Régime</label>
         </div>
         <div class="input-field col s4">
             <input id="pays" type="text" class="validate" ng-model="entreprise.pays">
-            <label for="pays">Pays du Participant Etranger </label>
+            <label for="pays" ng-class="{'active' : entreprise.pays}">Pays du Participant Etranger </label>
         </div>
         <div class="input-field col s4">
-            <input id="annee" type="date" class="validate datepicker">
-            <label for="annee">Entrée en production</label>
+            <input id="annee" type="date" class="validate datepicker" ng-model="entreprise.production">
+            <label for="annee" ng-class="{'active' : entreprise.production}">Entrée en production</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s6">
             <input id="capital" type="text" class="validate" ng-model="entreprise.capital">
-            <label for="capital">Capital en DT</label>
+            <label for="capital" ng-class="{'active' : entreprise.capital}">Capital en DT</label>
         </div>
         <div class="input-field col s6">
             <input id="emploi" type="text" class="validate" ng-model="entreprise.emploi">
-            <label for="emploi">Emploi</label>
+            <label for="emploi" ng-class="{'active' : entreprise.emploi}">Emploi</label>
         </div>
     </div>
 
 </div>
+
+<script>
+    console.log("hhhhh");
+
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>

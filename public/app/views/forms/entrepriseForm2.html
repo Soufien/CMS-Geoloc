@@ -2,37 +2,37 @@
     <div class="row">
         <div class="input-field col s4">
             <input id="adresseusine" type="text" class="validate" ng-model="entreprise.adresseusine">
-            <label for="adresseusine">Adresse usine</label>
+            <label for="adresseusine" ng-class="{'active' : entreprise.adresseusine}">Adresse usine</label>
         </div>
         <div class="input-field col s4">
             <input id="gouvernorat" type="text" class="validate" ng-model="entreprise.gouvernorat">
-            <label for="gouvernorat">Gouvernorat</label>
+            <label for="gouvernorat" ng-class="{'active' : entreprise.gouvernorat}">Gouvernorat</label>
         </div>
         <div class="input-field col s4">
             <input id="delegation" type="text" class="validate" ng-model="entreprise.delegation">
-            <label for="delegation">Délégation</label>
+            <label for="delegation" ng-class="{'active' : entreprise.delegation}">Délégation</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s6">
             <input id="tel" type="tel" class="validate"  ng-model="entreprise.telephone">
-            <label for="tel">Téléphone siège/usine</label>
+            <label for="tel" ng-class="{'active' : entreprise.telephone}">Téléphone siège/usine</label>
         </div>
         <div class="input-field col s6">
             <input id="fax" type="tel" class="validate" ng-model="entreprise.fax">
-            <label for="fax">Fax siège/usine</label>
+            <label for="fax" ng-class="{'active' : entreprise.fax}">Fax siège/usine</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s6">
             <input id="mail" type="email" class="validate" ng-model="entreprise.email">
-            <label for="mail">E-mail</label>
+            <label for="mail" ng-class="{'active' : entreprise.email}">E-mail</label>
         </div>
         <div class="input-field col s6">
             <input id="url" type="url" class="validate" ng-model="entreprise.url">
-            <label for="url">URL</label>
+            <label for="url" ng-class="{'active' : entreprise.url}">URL</label>
         </div>
     </div>
 </div>

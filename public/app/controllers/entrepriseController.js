@@ -29,14 +29,6 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
         telephone:"",
         url:""};
 
-    $(document).ready(function(){
-        $('.collapsible').collapsible({
-            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
-
-    });
-
-
     $scope.getListEntreprise = function(){
         EntrepriseService.getListEntreprise(function(entreprises){
             $scope.entrepriselist = entreprises;
@@ -61,4 +53,11 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
     }
 
 
+    $(document).ready(function(){
+
+        $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+
+    });
 }]);

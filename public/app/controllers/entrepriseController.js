@@ -42,7 +42,7 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
             $scope.entrepriselist = entreprises;
             console.log(entreprises);
         });
-    }
+    };
 
 
     $scope.createNewEntreprise = function(entreprise){

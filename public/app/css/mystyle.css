@@ -64,3 +64,9 @@ footer.page-footer, nav{
 .stepnumber{
     float: left;
 }
+
+
+#maps {
+    width: 300px;
+    height: 150px;
+}

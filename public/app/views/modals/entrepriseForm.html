@@ -1,0 +1,48 @@
+
+<!-- Modal Structure -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="" class="brand-logo center">Ajouter une entreprise</a>
+            </div>
+        </nav>
+        <form class="form-vertical" name="myForm"  novalidate>
+            <fieldset ng-show="step == 1">
+                <legend>L'entreprise</legend>
+                <div class="form-group">
+                    <div ng-include="'app/views/forms/entrepriseForm1.html'"></div>
+                </div>
+                <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+            </fieldset>
+            <fieldset ng-show="step == 2">
+                <legend>Contact</legend>
+                <div class="form-group">
+                    <div ng-include="'app/views/forms/entrepriseForm2.html'"></div>
+                </div>
+                <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+                <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+            </fieldset>
+
+            <fieldset ng-show="step == 3">
+                <legend>Etat juridique</legend>
+                <div class="form-group">
+                    <div ng-include="'app/views/forms/entrepriseForm3.html'"></div>
+                </div>
+                <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+                <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+            </fieldset>
+
+            <fieldset ng-show="step == 4">
+                <legend>Carte géographique</legend>
+                <div class="form-group">
+                    <div ng-include="'app/views/forms/entrepriseForm4.html'"></div>
+                </div>
+                <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+                <button class="btn btn-primary" ng-click="createNewEntreprise()">Submit</button>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+

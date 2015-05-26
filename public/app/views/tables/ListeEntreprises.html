@@ -1,29 +1,62 @@
 <div class="card-panel" style="text-align: center">
     <span>Liste des entreprises</span>
     <a class="btn-floating btn-medium waves-effect waves-light indeterminate floatRightbtn">
-        <i class="mdi-content-add" onclick="$('#modal2').openModal();"></i>
+        <i class="mdi-content-add" onclick="$('#modal3').openModal();"></i>
     </a>
 
 </div>
 <div id="oeuvreList" ng-init="getListEntreprise();">
 
     <table ng-table="tableParams" show-filter="true" class="table striped centredtable">
-        <tr ng-repeat="oeuvre in $data" class="">
-            <td data-title="'Num oeuvre'">
-                {{oeuvre.numOeuvre}}
+        <tr ng-repeat="entreprise in $data" class="">
+            <td data-title="'Dénomination'">
+                {{entreprise.denomination}}
             </td>
-            <td data-title="'Titre'">
-                {{oeuvre.titre}}
+            <td data-title="'Responsable'">
+                {{entreprise.responsable}}
             </td>
 
-            <td data-title="'Description'">
-                {{oeuvre.description}}
+            <td data-title="'URL'">
+                <a href="mailto:{{entreprise.url}}" ng-show="entreprise.url">
+                    <i class="mdi-content-link"></i>
+                </a>
             </td>
+
+            <td data-title="'Secteur'">
+                {{entreprise.secteur}}
+            </td>
+
+            <td data-title="'Email'">
+                    <a href="mailto:{{entreprise.email}}" ng-show="entreprise.email">
+                        <i class="mdi-communication-email"></i>
+                    </a>
+            </td>
+
+            <td data-title="'Tel'">
+                {{entreprise.telephone}}
+            </td>
+
+            <td data-title="'Maps'">
+                <a href="" ng-click="showLocation(entreprise.latitude,entreprise.longitude);">
+                    <i class="mdi-communication-location-on"></i>
+                </a>
+
+            </td>
+
             <td data-title="'Actions'">
-                <a href="#/{{action.isFor}}/configure/{{action.elementID}}">Modifier</a>
+                <a href="#/{{entreprise.id}}">
+                    <i class="mdi-editor-border-color"></i>
+                </a>
+                <span> - </span>
+                <a href="#/{{entreprise.id}}">
+
+                    <i class="mdi-action-delete"></i>
+                </a>
             </td>
 
         </tr>
     </table>
 </div>
-<div ng-include="'app/views/modals/oeuvreForm.html'"></div>
+
+<div ng-include="'app/views/modals/entrepriseForm.html'"></div>
+

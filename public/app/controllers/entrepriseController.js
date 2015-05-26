@@ -2,13 +2,15 @@
  * Created by soofix on 4/20/15.
  */
 
-angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','EntrepriseService',function($scope,EntrepriseService) {
+angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$scope'
+    ,'EntrepriseService','ngTableParams','$filter',function($scope,EntrepriseService,ngTableParams,$filter) {
 
 
     $scope.me = 'Hello from MainController';
     $scope.entrepriselist = null;
 
     $scope.entreprise = {
+        id:"",
         activite:"",
         adresseusine:"",
         capital:"",
@@ -89,14 +91,22 @@ angular.module('EntrCtrl', []).controller('EntrepriseController',['$scope','Entr
         });
     };
 
-    $scope.initMap = function () {
-        $('#maps').locationpicker({
-            location: {latitude: 46.15242437752303, longitude: 2.7470703125},
-            radius: 300,
-            inputBinding: {
-                latitudeInput: $('#latitude'),
-                longitudeInput: $('#longitude')
-            }
-        });
-    };
+        $scope.initMap = function () {
+            $('#maps').locationpicker({
+                location: {latitude: 46.15242437752303, longitude: 2.7470703125},
+                radius: 300,
+                inputBinding: {
+                    latitudeInput: $('#latitude'),
+                    longitudeInput: $('#longitude')
+                }
+            });
+        };
+
+
+        $scope.showLocation = function (latitude,longitude) {
+            $('#maps').locationpicker({
+                location: {latitude:latitude , longitude: longitude},
+                radius: 300
+            });
+        };
 }]);

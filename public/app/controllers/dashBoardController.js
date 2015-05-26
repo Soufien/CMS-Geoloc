@@ -19,4 +19,8 @@ angular.module('MainCtrl', []).controller('MainController',['$scope','Entreprise
         });
     }
 
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+
 }]);

@@ -1,62 +1,40 @@
-<form>
+<div class="card-panel" style="text-align: center">
+    <span class="stepnumber">Step : {{step}}/4</span>
+    Ajouter une entreprise
+</div>
+<form class="form-vertical" name="myForm"  novalidate>
+    <fieldset ng-show="step == 1">
+        <legend>L'entreprise</legend>
+        <div class="form-group">
+            <div ng-include="'app/views/forms/entrepriseForm1.html'"></div>
+        </div>
+        <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+    </fieldset>
+    <fieldset ng-show="step == 2">
+        <legend>Contact</legend>
+        <div class="form-group">
+            <div ng-include="'app/views/forms/entrepriseForm2.html'"></div>
+        </div>
+        <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+        <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+    </fieldset>
 
-    <ul class="collapsible popout" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header active"><i class="mdi-communication-business"></i>L'entreprise</div>
-            <div class="collapsible-body">
-                <div ng-include="'app/views/forms/entrepriseForm1.html'"></div>
-            </div>
-        </li>
+    <fieldset ng-show="step == 3">
+        <legend>Etat juridique</legend>
+        <div class="form-group">
+            <div ng-include="'app/views/forms/entrepriseForm3.html'"></div>
+        </div>
+        <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+        <button class="btn btn-primary" ng-click="nextStep()">Next step</button>
+    </fieldset>
 
-        <li>
-            <div class="collapsible-header active"><i class="mdi-communication-quick-contacts-dialer"></i>Contact</div>
-            <div class="collapsible-body">
-                <div ng-include="'app/views/forms/entrepriseForm2.html'"></div>
-
-            </div>
-        </li>
-
-        <li>
-            <div class="collapsible-header active"><i class="mdi-notification-play-install"></i>Etat juridique</div>
-            <div class="collapsible-body">
-                <div ng-include="'app/views/forms/entrepriseForm3.html'"></div>
-            </div>
-        </li>
-
-        <li>
-            <div class="collapsible-header active"><i class="mdi-maps-pin-drop"></i>Maps</div>
-            <div class="collapsible-body">
-                <div ng-include="'app/views/forms/entrepriseForm4.html'"></div>
-            </div>
-        </li>
-
-    </ul>
+    <fieldset ng-show="step == 4">
+        <legend>Carte géographique</legend>
+        <div class="form-group">
+            <div ng-include="'app/views/forms/entrepriseForm4.html'"></div>
+        </div>
+        <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
+        <button class="btn btn-primary" ng-click="createNewEntreprise()">Submit</button>
+    </fieldset>
 </form>
 
-<div class="row">
-    <div class="col s5 offset-s5">
-        <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="createNewEntreprise(entreprise)">Submit
-            <i class="mdi-content-send right"></i>
-        </button>
-    </div>
-
-</div>
-
-<!-- Modal Structure -->
-<div id="successModal" class="modal">
-    <div class="modal-content">
-        <p>Une nouvelle entreprise s'est ajoutée avec success</p>
-    </div>
-    <div class="modal-footer">
-        <a class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-    </div>
-</div>
-
-<div id="errorModal" class="modal">
-    <div class="modal-content">
-        <p>Une erreur s'est produite lors de l'ajout d'une entreprise</p>
-    </div>
-    <div class="modal-footer">
-        <a class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-    </div>
-</div>

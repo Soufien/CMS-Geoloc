@@ -10,18 +10,11 @@
         </div>
     </div>
 
-    <div class="row" id="maps" style="width: 600px; height: 400px;">
+    <div ng-init="initMap();" class="row" id="maps" style="width: 600px; height: 400px;">
 
     </div>
 
 </div>
 
-<script>$('#maps').locationpicker({
-    location: {latitude: 46.15242437752303, longitude: 2.7470703125},
-    radius: 300,
-    inputBinding: {
-        latitudeInput: $('#latitude'),
-        longitudeInput: $('#longitude')
-    }
-});
+<script>
 </script>

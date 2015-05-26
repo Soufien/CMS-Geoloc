@@ -1,0 +1,29 @@
+<div class="card-panel" style="text-align: center">
+    <span>Liste des entreprises</span>
+    <a class="btn-floating btn-medium waves-effect waves-light indeterminate floatRightbtn">
+        <i class="mdi-content-add" onclick="$('#modal2').openModal();"></i>
+    </a>
+
+</div>
+<div id="oeuvreList" ng-init="getListEntreprise();">
+
+    <table ng-table="tableParams" show-filter="true" class="table striped centredtable">
+        <tr ng-repeat="oeuvre in $data" class="">
+            <td data-title="'Num oeuvre'">
+                {{oeuvre.numOeuvre}}
+            </td>
+            <td data-title="'Titre'">
+                {{oeuvre.titre}}
+            </td>
+
+            <td data-title="'Description'">
+                {{oeuvre.description}}
+            </td>
+            <td data-title="'Actions'">
+                <a href="#/{{action.isFor}}/configure/{{action.elementID}}">Modifier</a>
+            </td>
+
+        </tr>
+    </table>
+</div>
+<div ng-include="'app/views/modals/oeuvreForm.html'"></div>

@@ -21,6 +21,11 @@ angular.module('appRoutes', []).config(['$routeProvider', function($routeProvide
             controller: 'EntrepriseController'
         })
 
+        .when('/entreprise/list', {
+            templateUrl: 'app/views/tables/ListeEntreprises.html',
+            controller: 'EntrepriseController'
+        })
+
         .when('/login', {
             templateUrl: 'app/views/loginForm.html',
             controller: 'LoginController'

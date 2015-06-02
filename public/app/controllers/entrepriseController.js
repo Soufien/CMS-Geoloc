@@ -47,7 +47,6 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
 
     };
 
-
     $scope.getListEntreprise = function(){
         EntrepriseService.getListEntreprise(function(entreprises){
 
@@ -76,7 +75,7 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
         });
     };
 
-    $scope.createNewEntreprise = function(entreprise){
+        $scope.createNewEntreprise = function(entreprise){
 
         EntrepriseService.createEntreprise(entreprise,function(data){
             if(data == 200){
@@ -90,10 +89,9 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
 
         });
     };
-
         $scope.initMap = function () {
             $('#maps').locationpicker({
-                location: {latitude: 46.15242437752303, longitude: 2.7470703125},
+                location: {latitude: 36.803165614732464, longitude: 10.175888061523438},
                 radius: 300,
                 inputBinding: {
                     latitudeInput: $('#latitude'),

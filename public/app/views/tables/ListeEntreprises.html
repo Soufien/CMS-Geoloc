@@ -1,3 +1,5 @@
+<div ng-include="'app/views/modals/entrepriseForm.html'"></div>
+<div ng-include="'app/views/modals/alertmodal.html'"></div>
 <div class="card-panel" style="text-align: center">
     <span>Liste des entreprises</span>
     <a class="btn-floating btn-medium waves-effect waves-light indeterminate floatRightbtn">
@@ -8,7 +10,7 @@
 <div id="oeuvreList" ng-init="getListEntreprise();">
 
     <table ng-table="tableParams" show-filter="true" class="table striped centredtable">
-        <tr ng-repeat="entreprise in $data" class="">
+        <tr ng-repeat="entreprise in $data" class="" ng-class="entreprise.id">
             <td data-title="'Dénomination'">
                 {{entreprise.denomination}}
             </td>
@@ -17,7 +19,7 @@
             </td>
 
             <td data-title="'URL'">
-                <a href="mailto:{{entreprise.url}}" ng-show="entreprise.url">
+                <a href="http://{{entreprise.url}}" ng-show="entreprise.url" target="_blank">
                     <i class="mdi-content-link"></i>
                 </a>
             </td>
@@ -44,12 +46,11 @@
             </td>
 
             <td data-title="'Actions'">
-                <a href="#/{{entreprise.id}}">
+                <a href=""  ng-click="updateEntreprise(entreprise)">
                     <i class="mdi-editor-border-color"></i>
                 </a>
                 <span> - </span>
-                <a href="#/{{entreprise.id}}">
-
+                <a href="" ng-click="deletEntreprise(entreprise)">
                     <i class="mdi-action-delete"></i>
                 </a>
             </td>
@@ -57,6 +58,4 @@
         </tr>
     </table>
 </div>
-
-<div ng-include="'app/views/modals/entrepriseForm.html'"></div>
 

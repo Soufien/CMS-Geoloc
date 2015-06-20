@@ -25,6 +25,34 @@ angular.module('EntService', []).factory('EntrepriseService', ['$http', function
 
                 });
         }
+
+        ,
+
+        supprimerEntreprise : function(entreprise,callback){
+
+            console.log("SERVICE : "+entreprise);
+            $http.delete('/entreprise/'+entreprise).
+                success(function(data, status, headers, config) {
+                    callback(status);
+
+                }).
+                error(function(data, status, headers, config) {
+
+                });
+        }
+
+        ,
+
+        updateEntreprise : function(entreprise,callback){
+            $http.put('/entreprise/'+entreprise.id).
+                success(function(data, status, headers, config) {
+                    callback(status);
+
+                }).
+                error(function(data, status, headers, config) {
+
+                });
+        }
     }
 
 }]);

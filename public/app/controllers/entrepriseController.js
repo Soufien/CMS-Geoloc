@@ -2,9 +2,27 @@
  * Created by soofix on 4/20/15.
  */
 
-angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$scope'
-    ,'EntrepriseService','ngTableParams','$filter',function($scope,EntrepriseService,ngTableParams,$filter) {
+angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$scope' , 'LoginService'
+    ,'EntrepriseService','ngTableParams','$filter',function($scope, LoginService, EntrepriseService,ngTableParams,$filter) {
 
+        LoginService.getcurrentuser(function(data){
+            if(data == ""){
+                window.location.href="#/login";
+                $('#acceuil').hide();
+                $('#ajoutentreprise').hide();
+                $('#listentreprise').hide();
+                $('#deconnexionli').hide();
+
+            }else{
+                $('#loginli').hide();
+                $('#signupli').hide();
+                $('#acceuil').show();
+                $('#ajoutentreprise').show();
+                $('#listentreprise').show();
+                $('#deconnexionli').show();
+                console.log(data);
+            }
+        });
 
     $scope.me = 'Hello from MainController';
     $scope.entrepriselist = null;
@@ -50,8 +68,6 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
     $scope.getListEntreprise = function(){
         EntrepriseService.getListEntreprise(function(entreprises){
 
-
-
                 $scope.tableParams = new ngTableParams({
                     page: 1,            // show first page
                     count: 4
@@ -75,9 +91,38 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
         });
     };
 
-        $scope.createNewEntreprise = function(entreprise){
+        $scope.deletEntreprise = function(entreprise){
 
-        EntrepriseService.createEntreprise(entreprise,function(data){
+            $('#alertmodal').openModal();
+            $scope.deletedentreprise = entreprise.id;
+        };
+
+        $scope.confirmDelete = function(entrepriseid){
+
+            console.log(entrepriseid);
+            EntrepriseService.supprimerEntreprise(entrepriseid, function(status){
+
+                if(status == 200){
+                    $("."+entrepriseid).remove();
+                    Materialize.toast('Entreprise supprimé avec success', 4000);
+                }
+             });
+        };
+
+        $scope.updateEntreprise = function(entreprise){
+            console.log(entreprise.id);
+            $scope.entreprise = entreprise;
+            $('#modal3').openModal();
+
+            //EntrepriseService.updateEntreprise(entrepriseid, function(data){
+            //
+            //});
+        };
+
+        $scope.createNewEntreprise = function(){
+            console.log($scope.entreprise);
+
+        EntrepriseService.createEntreprise($scope.entreprise,function(data){
             if(data == 200){
 
                 Materialize.toast('Une nouvelle entreprise s\'est ajoutée avec success', 4000);
@@ -100,11 +145,19 @@ angular.module('EntrCtrl', ['ngTable']).controller('EntrepriseController',['$sco
             });
         };
 
-
         $scope.showLocation = function (latitude,longitude) {
             $('#maps').locationpicker({
                 location: {latitude:latitude , longitude: longitude},
                 radius: 300
             });
+        };
+
+        $scope.logoutUser = function () {
+            LoginService.logout(function(data){
+                console.log("login return : "+data);
+                window.location.href="#/login";
+
+            });
+
         };
 }]);

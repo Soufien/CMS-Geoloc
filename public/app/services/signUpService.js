@@ -8,6 +8,7 @@ angular.module('SignUpSrv', []).factory('SIgnUpService', ['$http', function($htt
         signUpaUser : function(user,callback){
             $http.post('/users ', user).
                 success(function(data, status, headers, config) {
+                    console.log(status);
                     callback(status);
 
                 }).

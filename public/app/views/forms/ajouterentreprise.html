@@ -2,7 +2,7 @@
     <span class="stepnumber">Step : {{step}}/4</span>
     Ajouter une entreprise
 </div>
-<form class="form-vertical" name="myForm"  novalidate>
+<form class="form-vertical " name="myForm"  novalidate>
     <fieldset ng-show="step == 1">
         <legend>L'entreprise</legend>
         <div class="form-group">
@@ -34,7 +34,7 @@
             <div ng-include="'app/views/forms/entrepriseForm4.html'"></div>
         </div>
         <button class="btn btn-default" ng-click="prevStep()">Previous step</button>
-        <button class="btn btn-primary" ng-click="createNewEntreprise()">Submit</button>
+        <button class="btn btn-primary" ng-click="createNewEntreprise()">Ajouter</button>
     </fieldset>
 </form>
 

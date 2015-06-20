@@ -3,11 +3,12 @@
         <div class="nav-wrapper">
             <a href="#" class="brand-logo"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li ng-class="{ active: isActive('#/')}"><a href="#/">Acceuil</a></li>
-                <li ng-class="{ active: isActive('/cats')}"><a href="#/entreprise/ajouter">Ajouter Entreprise</a></li>
-                <li ng-class="{ active: isActive('/cats')}"><a href="#/entreprise/list">Liste des entreprise</a></li>
-                <li ng-class="{ active: isActive('/cats')}"><a href="#/login">Login</a></li>
-                <li ng-class="{ active: isActive('/cats')}"><a href="#/signup">Signup</a></li>
+                <li id="acceuil" ng-class="{ active: isActive('#/')}"><a href="#/">Acceuil</a></li>
+                <li id="ajoutentreprise" ng-class="{ active: isActive('/cats')}"><a href="#/entreprise/ajouter">Ajouter Entreprise</a></li>
+                <li id="listentreprise" ng-class="{ active: isActive('/cats')}"><a href="#/entreprise/list">Liste des entreprise</a></li>
+                <li id="loginli" ng-class="{ active: isActive('/cats')}"><a href="#/login">Login</a></li>
+                <li id="signupli" ng-class="{ active: isActive('/cats')}"><a href="#/signup">Inscription</a></li>
+                <li id="deconnexionli"><a href="" onclick="logout()">Deconnexion</a></li>
             </ul>
         </div>
     </nav>
